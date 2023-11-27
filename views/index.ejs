@@ -1,77 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="This is where your description goes">
-    	<meta name="keywords" content="one, two, three">	<title>home</title>
-		<!-- external CSS link -->
-		<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> -->
-		<link rel="stylesheet" href="style.css">
-		
-		<!-- <link rel="stylesheet" href="css/style.css"> -->
-	</head>
-	<body>
-		<h2>Welcome to ShiftFinder</h2>
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="/signup" method="post">
-			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<p>Already have an account? <a href="/login">Login</a></p>
-			<p>Or go <a href="/">home</a>.</p>
-			<!-- <input type="text" placeholder="Name" /> -->
-			<input type="email" name="email" placeholder="Email" />
-			<input type="password" name="password" placeholder="Password" />
-			<button id="signUp" type="submit">SignUp</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="/login" method="post">
-			<h1>Sign in</h1>
-			<!-- <div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div> -->
-			<span><a href="/signup">Need an account</a></span>
-			<p>Or go <a href="/">home</a>.</p>
-			<input type="email" name="email" placeholder="Email" />
-			<input type="password" name="password" placeholder="Password" />
+<!doctype html>
+<html>
+<head>
+    <title>ShiftFinder</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
 
-			
-			<button id="signIn" type="submit">SignIn</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button type="submit" class="ghost" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button type="submit" class="ghost" id="signUp">Sign Up</button>
-			</div>
-		</div>
-	</div>
+    <div class="jumbotron text-center">
+        <h1>ShiftFinder</h1>
+        <img src="http://4.bp.blogspot.com/-lCEBE_9QoaU/UowzLruirlI/AAAAAAAAGrA/wyOlVh_IREE/s1600/search.jpeg" alt="21 Savage Profile Photo">
+
+        <p>Login or Signup:</p>
+
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
+
+    </div>
+
 </div>
-
-<footer>
-	<p>
-		<!-- Created with <i class="fa fa-heart"></i> by
-		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-		- Read how I created this and how you can join the challenge
-		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>. -->
-	</p>
-</footer>
-<script src="main.js"></script>
-		<!-- <script type="text/javascript" src="js/main.js"></script> -->
-	</body>
+</body>
 </html>

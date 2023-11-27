@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">	<title>ShiftFinder</title>
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ShiftFinder</div>
+        <ul class="nav-links">
+            <li><a href="profile">Profile</a></li>
+            <li><a href="/logout" >Logout</a></li>
+            <!-- <li><a href="#profile"></a> profile</a></li> -->
+        </ul>
+    </nav>
+    <div class="mission-statement">
+        <h1 class="missionst">Bridging Gaps, One Shift at a Time</h1>
+    </div>
+    <!--  -->
+    <!-- Add input fields for job listing details (e.g., jobTitle, location, etc.) -->    
+    <!-- Wrap the form and job listings in a container -->
+    <!-- <div class="job-form">
+  <form action="/profile" method="POST">
+   
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="email" placeholder="email">
+    <input type="text" name="address" placeholder="address">
+    <input type="text" name="hobbies" placeholder="hobbies">
+    <input type="text" name="job" placeholder="job">
+    <input type="text" name="skills" placeholder="skills">
+
+     Submit button to create a new job listing -->
+    <!-- <button type="submit">create profile </button>
+  </form>
+    </div> --> 
+
+  <!-- Form for creating a new job listing -->
+
+  <button id="createJobBtn">Create Job Listing</button>
+
+  <!-- Job listings -->
+  <div class="job-listings">
+    <h3>Job Search</h3>
+    <ul>
+      <% for(var i = 0; i <jobadd.length; i++) { %>
+        <li class="job-item" data-id="<%= jobadd[i]._id %>">
+          <!-- You can include an image here if you have in your jobadd objects -->
+          <!-- <img src="<%= jobadd[i].imageUrl %>" alt="Company Logo"> -->
+          <div class="job-details">
+            <h2><%= jobadd[i].jobTitle %></h2>
+            <div class="job-info">
+              <span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%= jobadd[i].location %></span>
+              <span><i class="fa fa-briefcase" aria-hidden="true"></i> Job Type: <%= jobadd[i].jobType %></span>
+              <span><i class="fa fa-calendar" aria-hidden="true"></i> Application Deadline: <%= jobadd[i].applicationDeadline %></span>
+              <span><i class="fa fa-money" aria-hidden="true"></i> Salary Range: <%= jobadd[i].salaryRange %></span>
+            </div>
+            
+          </div>
+          <div class="job-actions">
+            <button type="button" class="apply-button" data-creator-email="<%= jobadd[i].creatorEmail %>">Apply</button>
+
+            <!-- <span><%= jobadd[i].thumbUp %></span> -->
+            <span><i class="fa-solid fa-bookmark"aria-hidden="true"></i></span>
+            <!-- <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> -->
+            <span><i class="fa fa-trash-alt" aria-hidden="true"></i></span>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+<!-- The Modal -->
+<div id="createJobModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Create Job Listing</h2>
+      <!-- The form for creating a job listing -->
+      <form action="/joblistings" method="POST">
+        <!-- Form fields -->
+        <input type="text" name="jobTitle" placeholder="Job Title">
+        <!-- Add other input fields for job listing details here -->
+        <input type="text" name="location" placeholder="Location">
+        <input type="text" name="jobType" placeholder="Job Type">
+        <input type="text" name="salaryRange" placeholder="Salary Range">
+        <input type="text" name="companyLogo" placeholder="Company Logo">
+        <input type="text" name="applicationDeadline" placeholder="Application Deadline">
+        <!-- Add all other fields here -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+<footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h2>JobEntry</h2>
+            <p>Connecting talent with opportunity.</p>
+          </div>
+          <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">login</a></li>
+            </ul>
+          </div>
+          <div class="footer-section contact-form">
+            <h2>Contact</h2>
+            <address>
+              507 Market St<br>
+              Newark nj 07105
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; <a href="https://ericksonhub.com/">Ericksonhub</a>| Designed by Ericksonhub
+        </div>
+      </footer>
+      
+    
+     
+    <script src="main.js"></script>
+</body>
+</html>

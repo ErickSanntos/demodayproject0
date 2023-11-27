@@ -1,331 +1,399 @@
-/******************************************
-/* CSS
-/*******************************************/
-
 /* Box Model Hack */
-*{
-    box-sizing: border-box;
-  }
-  
-  /******************************************
-  /* LAYOUT
-  /*******************************************/
-  
-  
-  
-  /******************************************
-  /* ADDITIONAL STYLES
-  /*******************************************/
-  /* Base Styles */
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  /* Navbar Styles */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #005f73; /* Dark blue background */
-    color: white;
-    padding: 15px 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  
-  .navbar .logo {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .navbar ul li {
-    margin-left: 30px;
-  }
-  
-  .navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-  }
-  
-  .navbar ul li a:hover {
-    color: #ffb703; /* Gold hover effect */
-  }
-  
-  /* Responsive Navbar */
-  @media screen and (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .navbar ul {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-    }
-  
-    .navbar ul li {
-      width: 100%;
-      margin: 10px 0;
-    }
-  
-    .navbar ul li a {
-      display: block;
-      padding: 10px;
-    }
-  }
-  .missionst {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, modern font */
-    color: #2a2a2a; /* Dark grey color for elegance and readability */
-    text-align: center; /* Center align the text */
-    font-size: 2.5rem; /* A larger size for prominence */
-    font-weight: bold; /* Bold font for emphasis */
-    margin-top: 50px; /* Add some space at the top */
-    margin-bottom: 20px; /* Space at the bottom */
-    padding: 10px; /* Padding for a bit of space around the text */
-    border-bottom: 3px solid #005f73; /* A solid line under the text for accent */
-    display: inline-block; /* Makes the border-bottom fit to the text width */
-    line-height: 1.3; /* Adjust line spacing for better readability */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
-    letter-spacing: 1px; /* Slightly increase letter spacing for a polished look */
+* {
+  box-sizing: border-box;
+}
+.bookmarked {
+  color: blue; /* Change to the shade of blue you prefer */
 }
 
-/* Responsive adjustments for smaller screens */
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Enhanced Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005f73;
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.navbar .nav-links li {
+  margin-left: 30px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #ffb703;
+}
+
+/* Adjustments for the logout button */
+.navbar .btn {
+  margin-left: 30px;
+  background: transparent;
+  border: 1px solid white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn:hover {
+  background-color: white;
+  color: #005f73;
+}
+
+/* Responsive Navbar */
 @media screen and (max-width: 768px) {
-    .missionst {
-        font-size: 2rem; /* Slightly smaller font size for smaller screens */
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar .nav-links li,
+  .navbar .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .navbar .nav-links li a,
+  .navbar .btn {
+    display: block;
+    padding: 10px;
+  }
+}
+/* Updated Mission Statement Styles */
+.mission-statement {
+  color: #ffb703; /* Maintaining vibrant orange for text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #80cbc4; /* Lighter shade of teal */
+  /* Alternatively, use a soft orange: background-color: #ffd699; */
+  padding: 20px;
+  height: 300px;
+  text-align: center;
+  position: relative;
 }
 
-  /* Mission Statement */
+.mission-statement h1 {
+  color: white; /* White text for better contrast */
+  margin: 0;
+  font-size: 3em;
+  font-family: 'Poppins', sans-serif; /* Using 'Poppins', a stylish font */
+  font-weight: bold;
+  animation: fadeInText 5s ease-in-out forwards, moveText 5s ease-in-out forwards;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), /* Layered shadows for 3D effect */
+               6px 6px 0px rgba(0, 0, 0, 0.15),
+               9px 9px 0px rgba(0, 0, 0, 0.1),
+               12px 12px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, text-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.mission-statement h1:hover {
+  transform: scale(1.05); /* Slightly scale up text on hover for interactivity */
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Change text shadow on hover */
+}
+
+
+
+/* Animation for fading in and moving text */
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(-100%); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moveText {
+  0% { letter-spacing: -5px; }
+  100% { letter-spacing: normal; }
+}
+
+/* Responsive Mission Statement */
+@media screen and (max-width: 768px) {
   .mission-statement {
-    color: #ffb703;
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Adjust this as needed */
-    align-items: center;
-    object-fit: cover;
-    background: url('https://cc.careersportal.ie/mce/plugins/filemanager/files/communities/jobsearch.png') no-repeat center center;
-    background-size: cover;
-    color: white;
-    padding: 20px;
-    height: 300px; /* Adjust the height as needed */
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
   }
-  
-  @media screen and (max-width: 768px) {
-    .mission-statement {
-      grid-template-columns: 1fr; /* Stack on smaller screens */
-      text-align: center;
-    }
+
+  .mission-statement h1 {
+    font-size: 2em; /* Adjusted font size for smaller screens */
   }
-  
-  /* Job Listing Styles */
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Styles for Create Job Listing and Create Profile forms */
+
+.job-listings {
+  padding: 20px;
+  background-color: #f0f0f0; /* Light background for the job listings area */
+}
+
+.job-listings h3 {
+  text-align: center;
+  font-size: 24px; /* Large, readable font size */
+  color: #333; /* Darker color for the heading */
+  margin-bottom: 30px; /* Spacing after the heading */
+}
+
+.job-listings ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Flex layout for the job cards */
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  gap: 20px; /* Spacing between cards */
+  justify-content: center; /* Center cards in the job listings area */
+}
+
 .job-item {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    background-color: white;
-    transition: transform 0.3s, box-shadow 0.3s;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
+  border-radius: 10px; /* Rounded corners */
+  width: calc(33.333% - 20px); /* Three items per row, accounting for gap */
+  margin-bottom: 20px; /* Spacing between rows of cards */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.job-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.job-details {
+  padding: 15px;
+}
+
+.job-details h2 {
+  font-size: 20px; /* Larger font size for job title */
+  color: #333; /* Darker color for text */
+  margin: 10px 0; /* Spacing around the title */
+}
+
+.job-info {
+  font-size: 14px; /* Readable font size */
+  color: #555; /* Color for job details */
+}
+
+.job-info span,
+.job-info i {
+  margin-right: 5px; /* Spacing between icons and text */
+}
+
+.job-info i {
+  color: #005f73; /* Icon color that stands out */
+  font-size: 16px; /* Slightly larger icons */
+}
+
+.job-actions {
+  padding: 15px;
+  text-align: center; /* Center-align the apply button */
+  border-top: 1px solid #eee; /* Separator between job info and actions */
+  border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+}
+
+.apply-button {
+  background-color: #4CAF50; /* Green background for apply button */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transition for a smooth hover effect */
+}
+
+.apply-button:hover {
+  background-color: #43A047; /* Darker shade of green on hover */
+}
+
+@media (max-width: 768px) {
+  .job-item {
+    width: calc(50% - 20px); /* Two items per row on smaller screens */
   }
-  
-  .job-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  .job-item {
+    width: 100%; /* Full width on very small screens */
   }
-  
-  .job-item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 20px;
-    border: 3px solid #005f73;
-  }
-  
-  .job-details {
-    flex-grow: 1;
-  }
-  
-  .job-details h5 {
-    margin-bottom: 8px;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .job-info {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-  }
-  
-  .job-info span {
-    display: inline-flex;
-    align-items: center;
-    margin-right: 15px;
-    color: #555;
-  }
-  
-  .job-info i {
-    color: #005f73;
-  }
-  
-  .job-actions {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-left: auto;
-  }
-  
-  .job-actions a {
-    background-color: #005f73;
-    color: white;
-    padding: 8px 15px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .job-actions a:hover {
-    background-color: #004953;
-  }
-  
-  /* Responsive Job Listings */
-  @media screen and (max-width: 768px) {
-    .job-item {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .job-info, .job-actions {
-      width: 100%;
-      justify-content: space-between;
-      margin-top: 10px;
-    }
-  }
-  
-  /* Container Styling */
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 15px;
-  }
-  
-  .container h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Tab Navigation Styling */
-  .job-tabs {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-    
-  .nav.nav-pills {
-    justify-content: center;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #005f73;
-  }
-  
-  .nav-item {
-    display: flex;
-    margin: 0 15px;
-    list-style: none;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .nav-link {
-    font-size: 1.1rem;
-    color: #005f73;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-link:hover,
-  .nav-link.active {
-    background-color: #ffb703;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Responsive Styling for Tab Navigation */
-  @media screen and (max-width: 768px) {
-    .nav.nav-pills {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .nav-item {
-      width: 100%;
-      margin: 5px 0;
-    }
-  
-    .nav-link {
-      width: 100%;
-      text-align: center;
-    }
-  }
-  
-  /* footer */
-  .footer {
-    background-color: #005f73; /* This is a shade of blue. */
-    color: white;
-    text-align: left;
-    padding: 20px 0;
-  }
-  
+}
+
+/* /// model //// */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* /////button ////// */
+#createJobBtn {
+  padding: 10px 20px;
+  background-color:  #005f73; /* A nice shade of green */
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold; /* Make the font bold */
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px #999; /* This creates the 3D effect */
+  text-transform: uppercase; /* Optional: UPPERCASE LETTERS */
+  letter-spacing: 1px; /* Spacing out the letters for better readability */
+  outline: none; /* Removes the outline on focus */
+  transition: all 0.3s; /* Smooth transition for effects */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+}
+
+#createJobBtn:hover {
+  background-color:  #109cb8; /* A slightly darker shade of the button color for hover */
+  text-shadow: none; /* Remove text shadow on hover for a "lifting" effect */
+}
+
+#createJobBtn:active {
+  background-color: #10abca;
+  box-shadow: 0 2px #666; /* Adjust shadow to look like button is pressed */
+  transform: translateY(2px); /* Moves the button down */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Subtle text shadow for pressed effect */
+}
+
+/* Focusing on the button with keyboard navigation */
+#createJobBtn:focus {
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px white;
+}
+
+
+/* Enhanced Footer Styles */
+.footer {
+  background: linear-gradient(145deg, #007d92, #004a56); /* 3D gradient effect */
+  color: white;
+  text-align: left;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* deeper shadow for 3D effect */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  flex-wrap: wrap; /* Responsive behavior */
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+  min-width: 200px; /* minimum width for responsiveness */
+}
+
+.footer-section h2 {
+  color: #0a9396;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* subtle text shadow for depth */
+}
+
+.footer-section ul {
+  list-style-type: none;
+}
+
+.footer-section ul li a {
+  color: #94d2bd;
+  text-decoration: none;
+  transition: color 0.3s; /* smooth color transition */
+}
+
+.footer-bottom {
+  background-color: #003d5b;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* shadow at the top */
+}
+
+footer a:hover {
+  color: #ffb703; /* hover color change */
+  text-decoration: none; /* removing underline */
+}
+
+/* Responsive Footer for smaller devices */
+@media screen and (max-width: 768px) {
   .footer-content {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .footer-section {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .footer-section h2 {
-    color: #0a9396; /* Lighter shade of blue for heading */
-  }
-  
-  .footer-section ul {
-    list-style-type: none;
-  }
-  
-  .footer-section ul li a {
-    color: #94d2bd; /* Soft blue color for links */
-    text-decoration: none;
-  }
-  
-  .footer-bottom {
-    background-color: #003d5b; /* Darker shade of blue for the bottom part */
-    padding: 10px;
     text-align: center;
+    margin: 10px 0;
   }
-  
-  footer a:hover {
-    text-decoration: underline;
+
+  .footer-bottom {
+    margin-top: 20px;
   }
-  
+}

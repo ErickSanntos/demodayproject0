@@ -1,0 +1,63 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.jumbotron {
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center; /* Centering content */
+}
+
+.jumbotron h1 {
+    color: #005f73; /* Primary color for heading */
+    margin-bottom: 20px;
+}
+
+.jumbotron img {
+    max-width: 200px; /* Adjust as necessary */
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding depth */
+}
+
+.jumbotron p {
+    font-size: 18px;
+    color: #555;
+}
+
+.btn {
+    background-color: #005f73; /* Primary button color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 5px; /* Spacing between buttons */
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #004953; /* Darker shade on hover */
+}
+
+.btn .fa {
+    margin-right: 8px; /* Spacing between icon and text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .jumbotron {
+        padding: 20px;
+    }
+}

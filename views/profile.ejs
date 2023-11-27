@@ -1,68 +1,224 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>21 Savage Fan Site</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShiftFinder</title>
 </head>
 <body>
-<div class="container">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
 
-    <div class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-    </div>
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="style3.css">
 
-    <div class="row">
-
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
-
-                <% if (user.local.email) { %>
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
-
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
-
-            </div>
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar top -->
+    <div class="navbar-top">
+        <div class="title">
+            <h1>Profile</h1>
         </div>
-        <div class="col-sm-6">
-          <h3>Messages</h3>
-          <ul class="messages">
-          <% for(var i=0; i<messages.length; i++) {%>
-            <li class="message">
-              <span><%= messages[i].name %></span>
-              <span><%= messages[i].msg %></span>
-              <span><%= messages[i].thumbUp %></span>
-              <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-              <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+
+        <!-- Navbar -->
+        <ul>
+            <li>
+                <a href="#message">
+                  <span class="icon-count">1</span>
+                      <i class="fa fa-envelope fa-2x"></i>
+                      <div id="emailConfirmationMessage" style="display: none;"> <!-- Hidden by default -->
+                          <!-- Confirmation message will appear here -->
+                      </div>
+
+                </a>
             </li>
-          <% } %>
-          </ul>
+            <li>
+                <a href="#notification">
+                    <span class="icon-count">59</span>
+                    <i class="fa fa-bell fa-2x"></i>
+                </a>
+            </li>
+            <li>
+                  <a href="/logout" >
+                    <i class="fa fa-sign-out-alt fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- End -->
+    </div>
+    <!-- End -->
 
-          <h2>Add a message</h2>
-        <% if (user.local.email) { %>
-          <form action="/messages" method="POST">
-            <input type="text" value="<%= user.local.email %>" name="name">
-            <input type="text" placeholder="message" name="msg">
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-        <% } %>
 
+
+    <!-- Main -->
+    <div class="main">
+      <h2>IDENTITY</h2>
+      <div class="card">
+          <div class="card-body">
+              <i class="fa fa-pen fa-xs edit"></i>
+  
+              <div class="profile-info">
+                  <div class="info-row">
+                      <div class="label">Name</div>
+                      <div class="value"><%= userProfile && userProfile.name ? userProfile.name : 'Name not set' %></div>
+                  </div>
+                  <div class="info-row">
+                      <div class="label">Email</div>
+                      <div class="value"><%= user && user.local && user.local.email ? user.local.email : 'Email not set' %></div>
+                  </div>
+                  <div class="info-row">
+                      <div class="label">Address</div>
+                      <div class="value"><%= userProfile && userProfile.address ? userProfile.address : 'Address not set' %></div>
+                  </div>
+                  <div class="info-row">
+                      <div class="label">Skill</div>
+                      <div class="value"><%= userProfile && userProfile.skill ? userProfile.skill : 'Skill not set' %></div>
+                  </div>
+              </div>
+  
+              <button id="createJobBtn">Create Job Listing</button>   
+              <button id="openProfileModalBtn">Update Profile</button>
+          </div>
+      </div>
+  </div>
+  
+        
+    <!-- Sidenav -->
+    <div class="sidenav">
+      <div class="profile">
+          <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
+
+          <div class="name">
+            <td><%= userProfile && userProfile.name ? userProfile.name : 'Name not set' %></td>
+          </div>
+          <div class="job">
+            <td><%= userProfile && userProfile.skill ? userProfile.skill : 'Name not set' %></td>
+          </div>
+      </div>
+
+      <div class="sidenav-url">
+          <div class="url">
+            <li><a href="main">Home</a></li>
+              <hr align="center">
+          </div>
+          <div class="url">
+              <a href="#settings">Settings</a>
+              <hr align="center">
+          </div>
+      </div>
+  </div>
+  <!-- End -->
+<div class="main-content">
+    <!-- Job listings and other content here -->
+     <!-- Job listings -->
+  <div class="job-listings">
+    <h3>Job Search</h3>
+    <ul>
+      <% for(var i = 0; i <jobadd.length; i++) { %>
+        <li class="job-item" data-id="<%= jobadd[i]._id %>">
+          <!-- You can include an image here if you have in your jobadd objects -->
+          <!-- <img src="<%= jobadd[i].imageUrl %>" alt="Company Logo"> -->
+          <div class="job-details">
+            <h2><%= jobadd[i].jobTitle %></h2>
+            <div class="job-info">
+              <span class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%= jobadd[i].location %></span>
+              <span  class="location" ><i class="fa fa-briefcase" aria-hidden="true"></i> Job Type: <%= jobadd[i].jobType %></span>
+              <span  class="location" ><i class="fa fa-calendar" aria-hidden="true"></i> Application Deadline: <%= jobadd[i].applicationDeadline %></span>
+              <span  class="location" ><i class="fa fa-money" aria-hidden="true"></i> Salary Range: <%= jobadd[i].salaryRange %></span>
+            </div>
+            
+          </div>
+          <div class="job-actions">
+            <button type="button" class="apply-button" data-creator-email="<%= jobadd[i].creatorEmail %>">Apply</button>
+
+            <!-- <span><%= jobadd[i].thumbUp %></span> -->
+            <span><i class="fa-solid fa-bookmark"aria-hidden="true"></i></span>
+            <!-- <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> -->
+            <span><i class="fa fa-trash-alt" aria-hidden="true"></i></span>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</div>
+      
+
+  <!-- The Modal -->
+<div id="createJobModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Create Job Listing</h2>
+    <!-- The form for creating a job listing -->
+    <form action="/joblistings" method="POST">
+      <!-- Form fields -->
+      <input type="text" name="jobTitle" placeholder="Job Title">
+      <!-- Add other input fields for job listing details here -->
+      <input type="text" name="location" placeholder="Location">
+      <input type="text" name="jobType" placeholder="Job Type">
+      <input type="text" name="salaryRange" placeholder="Salary Range">
+      <input type="text" name="companyLogo" placeholder="Company Logo">
+      <input type="text" name="applicationDeadline" placeholder="Application Deadline">
+      <!-- Add all other fields here -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+<div id="updateProfileModal" class="modal">
+  <!-- Modal content for updating profile information -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Update Profile Information</h2>
+    <!-- The form for updating profile information -->
+    <form action="/updateProfile" method="POST">
+      <!-- Form fields for profile information -->
+      <input type="text" name="name" placeholder="Name">
+      <input type="text" name="address" placeholder="Address">
+      <input type="text" name="phoneNumber" placeholder="Phone Number">
+      <button type="submit">Update Profile</button>
+    </form>
+  </div>
 </div>
 
-<script src="main.js"></script>
 
+  <script src="main.js"></script>
 </body>
 </html>
+
+<!-- 
+        <h2>SOCIAL MEDIA</h2>
+        <div class="card">
+            <h3>job search</h3>
+            <ul class="job-listings">
+              <% for(var i = 0; i <jobadd.length; i++) { %>
+                <li class="job-item" data-id="<%= jobadd[i]._id %>">
+                  <!-You can include an image here if you have in your jobadd objects -->
+                  <!-- <img src="<%= jobadd[i].imageUrl %>" alt="Company Logo"> -->
+                  <!-- <div class="job-details">
+                    <h2><%= jobadd[i].jobTitle %></h2>
+                    <div class="job-info">
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%= jobadd[i].location %></span>
+                        <span><i class="fa fa-briefcase" aria-hidden="true"></i> Job Type: <%= jobadd[i].jobType %></span>
+                        <span><i class="fa fa-calendar" aria-hidden="true"></i> Application Deadline: <%= jobadd[i].applicationDeadline %></span>
+                        <span><i class="fa fa-money" aria-hidden="true"></i> Salary Range: <%= jobadd[i].salaryRange %></span>
+                    </div>
+                  <div class="job-actions">
+                    <button type="button">Apply</button>
+                    <span><%= jobadd[i].thumbUp %></span>
+                    <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                    <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+                    <span><i class="fa fa-trash-alt" aria-hidden="true"></i></span> -->
+                  <!-- </div>
+                </li>
+              <% } %> -->
+            <!-- </ul>
+        </div>
+    </div> --> 

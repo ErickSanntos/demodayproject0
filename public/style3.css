@@ -1,0 +1,660 @@
+/* Import Font Dancing Script */
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #e8f5ff;
+    font-family: Arial;
+    /* overflow: hidden; */
+}
+
+/* NavbarTop */
+/* Navbar Top Styles */
+.navbar-top {
+    background-color: #005f73; /* Main color theme */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-top .title h1 {
+    font-family: 'Poppins', sans-serif; /* Consistent font family */
+    font-size: 24px; /* Adjust size as needed */
+    margin: 0;
+    color: white; /* Text color */
+}
+
+/* Navbar Links */
+.navbar-top ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-top ul li {
+    margin-left: 20px;
+}
+
+.navbar-top ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-top ul li a:hover {
+    color: #ffb703; /* Highlight color on hover */
+}
+/* Enhanced Title Styles */
+.navbar-top .title {
+    flex-grow: 1; /* Allows the title to take up available space */
+    text-align: center; /* Centers the title */
+}
+
+.navbar-top .title h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px; /* Adjust size as needed */
+    color: white;
+    margin: 0;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); /* Adds depth with shadow */
+    transform: translateZ(10px); /* Gives a 3D effect */
+    perspective: 500px; /* Adjusts the 3D effect perspective */
+}
+
+
+/* Icon Count */
+.icon-count {
+    background-color: #ffb703; /* Highlight background color */
+    border-radius: 50%; /* Circular shape */
+    padding: 2px 6px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+/* FontAwesome Icons */
+.navbar-top i {
+    color: white;
+    margin-right: 5px;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .navbar-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-top ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-top ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .navbar-top ul li a {
+        padding: 5px 0; /* Adjust padding for touch targets */
+    }
+}
+
+
+/* End */
+
+/* Side Navigation Styles */
+.sidenav {
+    background-color: #005f73; /* Primary brand color */
+    color: white;
+    width: 250px; /* Adjust width as needed */
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed; /* Fixed position to stay in place when scrolling */
+    left: 0;
+    top: 0;
+}
+
+.sidenav .profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidenav .profile img {
+    border-radius: 50%; /* Circular image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.sidenav .profile .name,
+.sidenav .profile .job {
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+}
+
+.sidenav .profile .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sidenav .profile .job {
+    font-size: 14px;
+    color: #ffb703; /* Secondary brand color */
+}
+
+.sidenav .sidenav-url .url {
+    margin-bottom: 15px;
+}
+
+.sidenav .sidenav-url a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block; /* Full width clickable area */
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sidenav .sidenav-url a:hover {
+    background-color: #ffb703; /* Secondary brand color */
+    color: #005f73; /* Primary brand color */
+    padding: 10px; /* Additional padding for effect */
+}
+
+.sidenav hr {
+    border: 0;
+    height: 1px;
+    background-color: #fff; /* White line */
+    margin: 10px 0;
+}
+
+/* Responsive Design for Sidenav */
+@media screen and (max-width: 768px) {
+    .sidenav {
+        width: 100%;
+        height: auto; /* Adjust for smaller screens */
+        position: static; /* Reset position for better mobile UX */
+    }
+}
+
+/* Main */
+/* Remove the dots after <li> elements in the .main section */
+/* Reset list styles */
+/* Main content area styling */
+.main-content {
+    margin-left: 250px; /* Same as the sidebar width */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .main-content {
+        margin-left: 0; /* Reset margin for mobile view */
+    }
+}
+
+.main ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Style for profile detail labels */
+.main li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.main li strong {
+    font-weight: bold;
+    width: 150px; /* Control the label width */
+}
+
+/* Style for profile detail values */
+.main li span {
+    margin-left: 10px; /* Spacing between label and value */
+}
+
+/* Main container styling */
+.main {
+    margin-top: 2%;
+    margin-left: 29%;
+    font-size: 16px; /* Adjusted for a more professional look */
+    padding: 0 10px;
+    width: 58%;
+    font-family: 'Poppins', sans-serif; /* Consistent font family */
+    color: #333; /* Text color */
+}
+
+/* Header within main */
+.main h2 {
+    font-family: 'Poppins', sans-serif; /* Consistent font family */
+    color: #005f73; /* Primary brand color */
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+/* Profile info styling */
+.profile-info .info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-info .label {
+    width: 30%;
+    text-align: right;
+    padding-right: 10px;
+    color: #005f73; /* Primary brand color for labels */
+}
+
+.profile-info .value {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 10px;
+    color: #333; /* Darker color for values */
+}
+
+/* Style for the profile form container */
+.profileForm {
+    display: none;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-family: 'Poppins', sans-serif; /* Consistent font family */
+}
+
+
+  /* Style for form labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  /* Style for input fields */
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  /* Style for the submit button */
+  button[type="submit"] {
+    background-color: #007bff; /* Blue color for the button */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  /* Style for the "Get Started" button */
+  #getStartedButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+
+  /* Add hover effect to the buttons */
+  button:hover, #getStartedButton:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+  }
+/* end */
+.main .card {
+    background-color: #fff; /* Retain white background for contrast */
+    border-radius: 10px; /* Softer border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px; /* Adjusted padding for consistency */
+    font-family: 'Poppins', sans-serif; /* Consistent font family */
+}
+
+.main .card table {
+    table-layout: fixed;
+    border: none;
+    font-size: 16px;
+    width: 100%; /* Full width for better layout */
+    table-layout: fixed; /* Ensures consistent column sizing */
+}
+
+.main .card td {
+    padding: 8px; /* Padding for table cells */
+    vertical-align: top; /* Align content to the top of the cell */
+}
+
+
+.edit {
+    position: absolute;
+    color: #005f73; /* Color to match the navbar */
+    right: 5%; /* Adjust positioning as needed */
+    top: 20px; /* Position from the top */
+    background-color: #ffb703; /* Background color for visibility */
+    padding: 5px 10px; /* Padding for button size */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    font-size: 14px; /* Font size adjustment */
+    cursor: pointer; /* Cursor to indicate clickable */
+}
+
+
+.social-media {
+    text-align: center;
+    width: 90%;
+}
+
+.social-media span {
+    margin: 0 10px;
+}
+
+.fa-facebook:hover {
+    color: #4267b3 !important;
+}
+
+.fa-twitter:hover {
+    color: #1da1f2 !important;
+}
+
+.fa-instagram:hover {
+    color: #ce2b94 !important;
+}
+
+.fa-invision:hover {
+    color: #f83263 !important;
+}
+
+.fa-github:hover {
+    color: #161414 !important;
+}
+
+.fa-whatsapp:hover {
+    color: #25d366 !important;
+}
+
+.fa-snapchat:hover {
+    color: #fffb01 !important;
+}
+
+/* End */
+
+/* ////// job listings  */
+/* Overall styling for job listings container */
+.job-listings {
+    padding: 20px;
+    background-color: #f0f0f0; /* Light background for the job listings area */
+}
+
+/* Heading style */
+.job-listings h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px; /* More spacing after the heading */
+}
+
+/* Job item list styling */
+.job-listings ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centering the job cards */
+}
+
+/* Individual job item styling */
+.job-item {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: calc(33.333% - 20px); /* Adjusting width for a three-column layout */
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.job-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Job details styling within each item */
+.job-details {
+    padding: 15px;
+}
+
+.job-details h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Additional job info styling */
+.job-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.job-info span,
+.job-info i {
+    margin-right: 5px;
+}
+
+.job-info i {
+    color: #005f73;
+    font-size: 16px;
+}
+
+/* Job action (like apply button) styling */
+.job-actions {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 10px 10px;
+}
+.job-info .location {
+    font-weight: bold;
+    color: #005f73; /* Or any color that stands out */
+}
+@media screen and (max-width: 768px) {
+    .job-item {
+        width: 100%; /* Full width on smaller screens */
+        margin-left: 0; /* Adjust margin if necessary */
+    }
+}
+/* dropdown */
+#emailConfirmationMessage {
+    display: none; /* Hidden by default */
+    background-color: #f9f9f9; /* Light background */
+    border: 1px solid #ddd; /* Border for distinction */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for content */
+    position: absolute; /* Positioning relative to its parent */
+    top: 30px; /* Position below the envelope icon */
+    right: 0; /* Align to the right side */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for depth */
+    z-index: 1; /* Ensure it's above other elements */
+    width: 300px; /* Set a fixed width */
+}
+
+/* Optional: Adding a small arrow pointing upwards towards the envelope icon */
+#emailConfirmationMessage::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Position just above the dropdown */
+    right: 20px; /* Align with the text */
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #f9f9f9 transparent;
+}
+#emailConfirmationMessage.dropdown-animation {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+  /* create button  */
+  /* /// icon  */
+  .apply-button {
+    background-color: #4CAF50; /* Green background for apply button */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition for a smooth hover effect */
+  }
+  
+  .apply-button:hover {
+    background-color: #43A047; /* Darker shade of green on hover */
+  }
+  /* /////button ////// */
+#createJobBtn {
+    padding: 10px 20px;
+    background-color:  #005f73; /* A nice shade of green */
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold; /* Make the font bold */
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px #999; /* This creates the 3D effect */
+    text-transform: uppercase; /* Optional: UPPERCASE LETTERS */
+    letter-spacing: 1px; /* Spacing out the letters for better readability */
+    outline: none; /* Removes the outline on focus */
+    transition: all 0.3s; /* Smooth transition for effects */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+  }
+  
+  #createJobBtn:hover {
+    background-color:  #109cb8; /* A slightly darker shade of the button color for hover */
+    text-shadow: none; /* Remove text shadow on hover for a "lifting" effect */
+  }
+  
+  #createJobBtn:active {
+    background-color: #10abca;
+    box-shadow: 0 2px #666; /* Adjust shadow to look like button is pressed */
+    transform: translateY(2px); /* Moves the button down */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Subtle text shadow for pressed effect */
+  }
+  /* profile button  */
+  #openProfileModalBtn {
+    padding: 10px 20px;
+    background-color: #ffb703; /* A different color for distinction */
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+    transition: all 0.3s;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#openProfileModalBtn:hover {
+    background-color: #e6a500; /* A slightly darker shade for hover */
+    text-shadow: none;
+}
+
+#openProfileModalBtn:active {
+    background-color: #cc9300;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+  /* model */
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  /* Focusing on the button with keyboard navigation */
+  #createJobBtn:focus {
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px white;
+  }
+  
+  
+  /* Responsive Job Listings */
+  @media screen and (max-width: 768px) {
+    .job-item {
+        max-width: 100%; /* Allow full width on mobile devices */
+    }
+  
+    .job-item img {
+        margin-right: 0; /* Remove margin for the image on mobile */
+        margin-bottom: 10px; /* Add some spacing between items on mobile */
+    }
+  
+    .job-details h2 {
+        font-size: 16px; /* Reduce font size for job titles in mobile view */
+    }
+  }
+  
